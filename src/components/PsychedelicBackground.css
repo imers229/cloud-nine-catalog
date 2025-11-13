@@ -1,0 +1,282 @@
+@keyframes float1 {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  33% {
+    transform: translate(30px, -30px) rotate(120deg);
+  }
+  66% {
+    transform: translate(-20px, 20px) rotate(240deg);
+  }
+}
+
+@keyframes float2 {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(-40px, 40px) rotate(180deg);
+  }
+}
+
+@keyframes float3 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(20px, 30px) scale(1.2);
+  }
+  66% {
+    transform: translate(-30px, -20px) scale(0.8);
+  }
+}
+
+@keyframes drift {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(-20px) translateX(10px);
+  }
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.1);
+  }
+}
+
+.psychedelic-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.vanta-container {
+  width: 100%;
+  height: 100%;
+}
+
+/* Cubos de hielo flotantes */
+.ice-cube {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, rgba(173, 216, 230, 0.6), rgba(135, 206, 250, 0.4));
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  box-shadow: 
+    0 4px 15px rgba(173, 216, 230, 0.4),
+    inset 0 0 20px rgba(255, 255, 255, 0.3);
+  animation: float1 8s ease-in-out infinite;
+}
+
+.ice-cube:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; animation-duration: 7s; }
+.ice-cube:nth-child(2) { top: 20%; left: 80%; animation-delay: 1s; animation-duration: 9s; }
+.ice-cube:nth-child(3) { top: 60%; left: 15%; animation-delay: 2s; animation-duration: 8s; }
+.ice-cube:nth-child(4) { top: 70%; left: 85%; animation-delay: 0.5s; animation-duration: 10s; }
+.ice-cube:nth-child(5) { top: 40%; left: 50%; animation-delay: 1.5s; animation-duration: 7.5s; }
+.ice-cube:nth-child(6) { top: 25%; left: 35%; animation-delay: 0.8s; animation-duration: 8.5s; }
+.ice-cube:nth-child(7) { top: 55%; left: 70%; animation-delay: 1.2s; animation-duration: 9.5s; }
+.ice-cube:nth-child(8) { top: 15%; left: 60%; animation-delay: 0.3s; animation-duration: 7.8s; }
+
+/* Nubes psicodélicas */
+.psychedelic-cloud {
+  position: absolute;
+  width: 150px;
+  height: 80px;
+  border-radius: 50%;
+  filter: blur(20px);
+  animation: drift 12s ease-in-out infinite;
+  opacity: 0.6;
+}
+
+.cloud-pink {
+  background: radial-gradient(circle, rgba(255, 105, 180, 0.8), rgba(255, 20, 147, 0.4));
+}
+
+.cloud-cyan {
+  background: radial-gradient(circle, rgba(0, 255, 255, 0.8), rgba(0, 206, 209, 0.4));
+}
+
+.cloud-yellow {
+  background: radial-gradient(circle, rgba(255, 255, 0, 0.8), rgba(255, 215, 0, 0.4));
+}
+
+.cloud-purple {
+  background: radial-gradient(circle, rgba(138, 43, 226, 0.8), rgba(147, 112, 219, 0.4));
+}
+
+.cloud-lime {
+  background: radial-gradient(circle, rgba(50, 205, 50, 0.8), rgba(124, 252, 0, 0.4));
+}
+
+.psychedelic-cloud:nth-child(9) { top: 15%; left: 20%; animation-delay: 0s; width: 180px; height: 90px; }
+.psychedelic-cloud:nth-child(10) { top: 45%; left: 70%; animation-delay: 2s; width: 200px; height: 100px; }
+.psychedelic-cloud:nth-child(11) { top: 75%; left: 30%; animation-delay: 4s; width: 160px; height: 85px; }
+.psychedelic-cloud:nth-child(12) { top: 30%; left: 85%; animation-delay: 1s; width: 170px; height: 95px; }
+.psychedelic-cloud:nth-child(13) { top: 55%; left: 10%; animation-delay: 3s; width: 190px; height: 88px; }
+.psychedelic-cloud:nth-child(14) { top: 10%; left: 50%; animation-delay: 1.5s; width: 175px; height: 92px; }
+.psychedelic-cloud:nth-child(15) { top: 65%; left: 60%; animation-delay: 2.5s; width: 185px; height: 95px; }
+.psychedelic-cloud:nth-child(16) { top: 35%; left: 25%; animation-delay: 0.8s; width: 165px; height: 87px; }
+
+/* Goteos de colores */
+.drip {
+  position: absolute;
+  width: 8px;
+  height: 30px;
+  background: linear-gradient(to bottom, transparent, var(--drip-color));
+  border-radius: 0 0 50% 50%;
+  animation: float2 6s ease-in-out infinite;
+}
+
+.drip:nth-child(11) { top: 5%; left: 25%; --drip-color: #ff1493; animation-delay: 0s; }
+.drip:nth-child(12) { top: 8%; left: 60%; --drip-color: #00ffff; animation-delay: 0.5s; }
+.drip:nth-child(13) { top: 3%; left: 90%; --drip-color: #7fff00; animation-delay: 1s; }
+.drip:nth-child(14) { top: 7%; left: 45%; --drip-color: #ff69b4; animation-delay: 1.5s; }
+.drip:nth-child(15) { top: 4%; left: 75%; --drip-color: #ffd700; animation-delay: 0.8s; }
+
+/* Círculos de colores flotantes */
+.color-orb {
+  position: absolute;
+  border-radius: 50%;
+  animation: float3 10s ease-in-out infinite;
+  filter: blur(8px);
+}
+
+.orb-small {
+  width: 30px;
+  height: 30px;
+}
+
+.orb-medium {
+  width: 50px;
+  height: 50px;
+}
+
+.orb-large {
+  width: 80px;
+  height: 80px;
+}
+
+.color-orb:nth-child(16) { 
+  top: 25%; left: 40%; 
+  background: radial-gradient(circle, #ff1493, transparent);
+  animation-delay: 0s;
+}
+
+.color-orb:nth-child(17) { 
+  top: 65%; left: 55%; 
+  background: radial-gradient(circle, #00ffff, transparent);
+  animation-delay: 1s;
+}
+
+.color-orb:nth-child(18) { 
+  top: 35%; left: 75%; 
+  background: radial-gradient(circle, #7fff00, transparent);
+  animation-delay: 2s;
+}
+
+.color-orb:nth-child(19) { 
+  top: 80%; left: 65%; 
+  background: radial-gradient(circle, #ffd700, transparent);
+  animation-delay: 0.5s;
+}
+
+.color-orb:nth-child(20) { 
+  top: 50%; left: 25%; 
+  background: radial-gradient(circle, #ff69b4, transparent);
+  animation-delay: 1.5s;
+}
+
+/* Partículas brillantes */
+.sparkle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.sparkle:nth-child(21) { top: 12%; left: 33%; animation-delay: 0s; }
+.sparkle:nth-child(22) { top: 48%; left: 88%; animation-delay: 0.3s; }
+.sparkle:nth-child(23) { top: 72%; left: 42%; animation-delay: 0.6s; }
+.sparkle:nth-child(24) { top: 28%; left: 68%; animation-delay: 0.9s; }
+.sparkle:nth-child(25) { top: 88%; left: 18%; animation-delay: 1.2s; }
+.sparkle:nth-child(26) { top: 15%; left: 92%; animation-delay: 1.5s; }
+.sparkle:nth-child(27) { top: 55%; left: 8%; animation-delay: 1.8s; }
+.sparkle:nth-child(28) { top: 38%; left: 48%; animation-delay: 2.1s; }
+
+/* Formas orgánicas tipo hongos/plantas */
+.organic-shape {
+  position: absolute;
+  bottom: 0;
+  width: 100px;
+  height: 140px;
+  opacity: 0.8;
+  animation: float2 10s ease-in-out infinite;
+  z-index: 5;
+}
+
+.organic-shape svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
+}
+
+.organic-left {
+  left: 5%;
+  animation-delay: 0s;
+}
+
+.organic-right {
+  right: 5%;
+  animation-delay: 1s;
+  transform: scaleX(-1);
+}
+
+/* Blobs flotantes grandes */
+.blob {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  animation: float3 15s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.blob-1 {
+  top: 20%;
+  left: 30%;
+  animation-delay: 0s;
+}
+
+.blob-2 {
+  top: 50%;
+  right: 20%;
+  animation-delay: 2s;
+  width: 250px;
+  height: 250px;
+}
+
+.blob-3 {
+  bottom: 20%;
+  left: 15%;
+  animation-delay: 4s;
+  width: 180px;
+  height: 180px;
+}

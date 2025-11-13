@@ -1,0 +1,517 @@
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes rainbow {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.5), 0 0 40px rgba(0, 255, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.5), 0 0 60px rgba(255, 0, 255, 0.3);
+  }
+}
+
+/* Animaciones de iconos */
+@keyframes iconSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes iconBounce {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-8px) scale(1.1);
+  }
+}
+
+@keyframes iconPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.8;
+  }
+}
+
+/* Estilos para iconos */
+.icon-cloud {
+  display: inline-block;
+  animation: float 4s ease-in-out infinite;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
+  margin-right: 15px;
+}
+
+.icon-sparkles {
+  display: inline-block;
+  animation: iconSpin 8s linear infinite, iconPulse 2s ease-in-out infinite;
+  filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.9));
+  margin-left: 15px;
+}
+
+.icon-inline {
+  display: inline-block;
+  animation: iconBounce 2s ease-in-out infinite;
+  vertical-align: middle;
+  margin-right: 12px;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.7));
+}
+
+.icon-btn {
+  display: inline-block;
+  animation: iconBounce 1.5s ease-in-out infinite;
+  vertical-align: middle;
+}
+
+.icon-btn-small {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+}
+
+button:hover .icon-btn,
+button:hover .icon-btn-small {
+  animation: iconSpin 1s linear infinite;
+}
+
+a:hover .icon-btn-small {
+  transform: translateX(5px);
+}
+
+.catalog {
+  min-height: 100vh;
+  padding: 20px;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.catalog::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(255, 0, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 50%, rgba(0, 255, 255, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+  animation: pulse 8s ease-in-out infinite;
+}
+
+.catalog-header {
+  text-align: center;
+  padding: 60px 20px;
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+
+.catalog-header h1 {
+  font-size: 5rem;
+  margin-bottom: 15px;
+  color: #ffffff;
+  font-family: 'Cherry Bomb One', cursive;
+  text-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.8),
+    0 4px 8px rgba(0, 0, 0, 0.6),
+    0 0 40px rgba(135, 206, 250, 0.8),
+    0 0 80px rgba(255, 215, 0, 0.5);
+  animation: float 3s ease-in-out infinite;
+  font-weight: 400;
+  letter-spacing: 8px;
+  filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.7));
+  background: rgba(0, 0, 0, 0.15);
+  padding: 20px 40px;
+  border-radius: 20px;
+  backdrop-filter: blur(5px);
+}
+
+.subtitle {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #ffffff;
+  font-family: 'Outfit', sans-serif;
+  text-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.9),
+    0 4px 8px rgba(0, 0, 0, 0.7),
+    0 0 20px rgba(135, 206, 250, 0.8),
+    2px 2px 6px rgba(0, 0, 0, 0.8);
+  font-weight: 600;
+  animation: pulse 4s ease-in-out infinite;
+  letter-spacing: 3px;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.8));
+}
+
+.tagline {
+  font-size: 1.1rem;
+  margin-bottom: 35px;
+  color: rgba(255, 255, 255, 1);
+  font-family: 'Space Grotesk', monospace;
+  text-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.9),
+    0 4px 8px rgba(0, 0, 0, 0.6),
+    1px 1px 4px rgba(0, 0, 0, 0.8);
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: 2px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.7));
+}
+
+.whatsapp-btn-header,
+.whatsapp-btn-footer {
+  background: linear-gradient(135deg, #25D366 0%, #20b358 50%, #1a9647 100%);
+  background-size: 200% 200%;
+  color: white;
+  font-family: 'Outfit', sans-serif;
+  border: 3px solid rgba(255, 255, 255, 0.9);
+  padding: 18px 40px;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 
+    0 6px 25px rgba(37, 211, 102, 0.5),
+    0 3px 10px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+.whatsapp-btn-header::before,
+.whatsapp-btn-footer::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.whatsapp-btn-header:hover::before,
+.whatsapp-btn-footer:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.whatsapp-btn-header:hover,
+.whatsapp-btn-footer:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 
+    0 8px 35px rgba(37, 211, 102, 0.7),
+    0 5px 20px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  background-position: 100% 0;
+  border-color: rgba(255, 255, 255, 1);
+}
+
+.whatsapp-icon {
+  font-size: 2rem;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.products-section {
+  max-width: 1400px;
+  margin: 0 auto 60px;
+  position: relative;
+  z-index: 1;
+}
+
+.section-title {
+  color: white;
+  font-size: 3rem;
+  text-align: center;
+  margin: 40px 0 40px;
+  font-family: 'Cherry Bomb One', cursive;
+  text-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.9),
+    0 4px 8px rgba(0, 0, 0, 0.7),
+    0 0 30px rgba(135, 206, 250, 0.8),
+    3px 3px 8px rgba(0, 0, 0, 0.8);
+  font-weight: 400;
+  letter-spacing: 4px;
+  filter: drop-shadow(0 3px 10px rgba(0, 0, 0, 0.8));
+  animation: float 4s ease-in-out infinite;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 15px 30px;
+  border-radius: 15px;
+  backdrop-filter: blur(5px);
+  display: inline-block;
+  width: auto;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+  padding: 20px;
+}
+
+.product-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 30px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 
+    0 10px 40px rgba(135, 206, 250, 0.35),
+    0 5px 20px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    0 0 0 1px rgba(255, 255, 255, 0.3);
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  position: relative;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+}
+
+.product-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #87ceeb, #ffffff, #ffd700, #87ceeb);
+  border-radius: 30px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: -1;
+  animation: gradientShift 4s ease infinite;
+  background-size: 300% 300%;
+}
+
+.product-card:hover::before {
+  opacity: 1;
+}
+
+.product-card:hover {
+  transform: translateY(-20px) scale(1.04);
+  box-shadow: 
+    0 25px 70px rgba(135, 206, 250, 0.6),
+    0 15px 40px rgba(255, 215, 0, 0.3),
+    0 10px 30px rgba(0, 0, 0, 0.3),
+    0 0 0 3px rgba(255, 255, 255, 0.8),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+  border-color: rgba(255, 215, 0, 0.5);
+}
+
+.product-image {
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #87ceeb 0%, #b0e0e6 50%, #ffd700 100%);
+  position: relative;
+}
+
+.product-image::after {
+  content: '✨';
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 2rem;
+  opacity: 0;
+  transition: opacity 0.3s;
+  animation: float 2s ease-in-out infinite;
+}
+
+.product-card:hover .product-image::after {
+  opacity: 1;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  filter: brightness(1.1) saturate(1.2);
+}
+
+.product-card:hover .product-image img {
+  transform: scale(1.2) rotate(3deg);
+  filter: brightness(1.2) saturate(1.4);
+}
+
+.product-info {
+  padding: 25px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 1));
+  border-top: 2px solid rgba(135, 206, 250, 0.2);
+}
+
+.product-info h3 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  color: #333;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  transition: color 0.3s;
+}
+
+.product-card:hover .product-info h3 {
+  background: linear-gradient(135deg, #4a90e2 0%, #87ceeb 50%, #ffd700 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.product-price {
+  font-size: 2.2rem;
+  font-weight: 700;
+  font-family: 'Space Grotesk', monospace;
+  background: linear-gradient(135deg, #ffd700 0%, #4a90e2 50%, #87ceeb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 15px 0;
+  filter: drop-shadow(0 2px 8px rgba(255, 215, 0, 0.4));
+}
+
+.view-details-btn {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(135deg, #4a90e2 0%, #5ba3f5 50%, #87ceeb 100%);
+  background-size: 200% 200%;
+  color: white;
+  font-family: 'Outfit', sans-serif;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 15px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 
+    0 5px 20px rgba(74, 144, 226, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.view-details-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.view-details-btn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.view-details-btn:hover {
+  background-position: 100% 0;
+  box-shadow: 
+    0 7px 30px rgba(135, 206, 250, 0.7),
+    0 4px 15px rgba(255, 215, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+.catalog-footer {
+  text-align: center;
+  padding: 50px 20px;
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+
+.whatsapp-btn-footer {
+  margin-bottom: 30px;
+}
+
+.footer-text {
+  font-size: 1rem;
+  font-family: 'Outfit', sans-serif;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+  .catalog-header h1 {
+    font-size: 2.5rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+    padding: 10px;
+  }
+
+  .product-price {
+    font-size: 1.8rem;
+  }
+
+  .whatsapp-btn-header,
+  .whatsapp-btn-footer {
+    padding: 15px 30px;
+    font-size: 1rem;
+  }
+}
