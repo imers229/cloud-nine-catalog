@@ -1,0 +1,583 @@
+.dose-calculator-page {
+  min-height: 100vh;
+  padding: 100px 20px 40px;
+  position: relative;
+}
+
+.calculator-container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.calculator-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.calculator-header svg {
+  margin-bottom: 15px;
+  filter: drop-shadow(0 0 20px #00ff00);
+}
+
+.calculator-title {
+  font-family: 'Bungee', cursive;
+  font-size: 2.5rem;
+  color: #00ff00;
+  text-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00;
+  margin-bottom: 10px;
+  animation: glow-pulse 2s infinite;
+}
+
+.calculator-subtitle {
+  font-family: 'Righteous', cursive;
+  font-size: 1.1rem;
+  color: #ff1493;
+  text-shadow: 0 0 10px #ff1493;
+}
+
+.calculator-form {
+  background: rgba(0, 0, 0, 0.8);
+  border: 2px solid #00ff00;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 40px rgba(0, 255, 0, 0.2);
+}
+
+.science-info-box {
+  background: linear-gradient(135deg, rgba(138, 43, 226, 0.3), rgba(255, 20, 147, 0.2));
+  border: 2px solid #8a2be2;
+  border-radius: 15px;
+  padding: 25px;
+  margin-bottom: 30px;
+}
+
+.science-info-box h3 {
+  font-family: 'Bungee', cursive;
+  color: #00ff00;
+  text-shadow: 0 0 15px #00ff00;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+.science-info-box p {
+  font-family: 'Righteous', cursive;
+  color: rgba(255, 255, 255, 0.95);
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.science-info-box strong {
+  color: #ffeb3b;
+  text-shadow: 0 0 5px #ffeb3b;
+}
+
+.science-points {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+}
+
+.science-points li {
+  font-family: 'Righteous', cursive;
+  color: #fff;
+  padding: 8px 0;
+  font-size: 0.95rem;
+  border-left: 3px solid #00ff00;
+  padding-left: 15px;
+  margin-bottom: 8px;
+}
+
+.science-source {
+  font-size: 0.85rem !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+  font-style: italic;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(138, 43, 226, 0.3);
+}
+
+.form-section {
+  margin-bottom: 30px;
+}
+
+.form-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Righteous', cursive;
+  font-size: 1.1rem;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.form-label svg {
+  color: #00ff00;
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.radio-option {
+  position: relative;
+  background: rgba(0, 0, 0, 0.6);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.radio-option:hover {
+  border-color: #00ff00;
+  transform: translateX(5px);
+}
+
+.radio-option.selected {
+  border-color: #00ff00;
+  background: rgba(0, 255, 0, 0.1);
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+}
+
+.radio-option input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+}
+
+.radio-content {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.radio-title {
+  font-family: 'Righteous', cursive;
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.radio-desc {
+  font-family: 'Righteous', cursive;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.weight-section {
+  background: rgba(0, 255, 0, 0.05);
+  border: 2px solid rgba(0, 255, 0, 0.3);
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.form-label.important {
+  color: #00ff00;
+  font-size: 1.15rem;
+}
+
+.weight-input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.weight-input {
+  flex: 1;
+  padding: 18px;
+  background: rgba(0, 0, 0, 0.6);
+  border: 2px solid #00ff00;
+  border-radius: 12px;
+  color: #fff;
+  font-family: 'Righteous', cursive;
+  font-size: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.weight-input:focus {
+  outline: none;
+  border-color: #00ff00;
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+  background: rgba(0, 255, 0, 0.1);
+}
+
+.input-unit {
+  font-family: 'Bungee', cursive;
+  color: #00ff00;
+  font-size: 1.3rem;
+  text-shadow: 0 0 10px #00ff00;
+}
+
+.weight-note {
+  margin-top: 12px;
+  font-family: 'Righteous', cursive;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  line-height: 1.5;
+}
+
+.weight-preview {
+  margin-top: 20px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
+  padding: 15px;
+  border: 1px solid rgba(0, 255, 0, 0.3);
+}
+
+.preview-title {
+  font-family: 'Righteous', cursive;
+  color: #00ff00;
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.preview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.preview-item {
+  background: rgba(138, 43, 226, 0.2);
+  border: 1px solid rgba(138, 43, 226, 0.4);
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.preview-level {
+  font-family: 'Righteous', cursive;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+}
+
+.preview-dose {
+  font-family: 'Bungee', cursive;
+  font-size: 1.2rem;
+  color: #ffeb3b;
+  text-shadow: 0 0 10px #ffeb3b;
+}
+
+.calculate-btn {
+  width: 100%;
+  padding: 18px;
+  background: linear-gradient(135deg, #00ff00, #00cc00);
+  border: none;
+  border-radius: 15px;
+  color: #000;
+  font-family: 'Bungee', cursive;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  margin-top: 30px;
+}
+
+.calculate-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 30px rgba(0, 255, 0, 0.5);
+}
+
+.calculator-result {
+  background: rgba(0, 0, 0, 0.9);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+}
+
+.result-header {
+  background: rgba(0, 0, 0, 0.8);
+  border-bottom: 3px solid;
+  padding: 30px;
+  text-align: center;
+}
+
+.result-header svg {
+  margin-bottom: 15px;
+  filter: drop-shadow(0 0 20px currentColor);
+}
+
+.result-header h2 {
+  font-family: 'Bungee', cursive;
+  font-size: 2rem;
+  color: #fff;
+  margin: 0;
+}
+
+.dose-info {
+  padding: 30px;
+}
+
+.dose-range {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.dose-item {
+  background: rgba(0, 0, 0, 0.6);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+}
+
+.dose-item.optimal {
+  border-color: #ffeb3b;
+  background: rgba(255, 235, 59, 0.1);
+  transform: scale(1.05);
+}
+
+.dose-label {
+  display: block;
+  font-family: 'Righteous', cursive;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 10px;
+}
+
+.dose-value {
+  display: block;
+  font-family: 'Bungee', cursive;
+  font-size: 2rem;
+  text-shadow: 0 0 15px currentColor;
+}
+
+.warning-box {
+  background: rgba(255, 235, 59, 0.1);
+  border: 2px solid #ffeb3b;
+  border-radius: 12px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.warning-box svg {
+  flex-shrink: 0;
+  color: #ffeb3b;
+}
+
+.warning-box p {
+  font-family: 'Righteous', cursive;
+  color: #fff;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.timing-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.timing-item {
+  background: rgba(138, 43, 226, 0.2);
+  border: 2px solid #8a2be2;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+}
+
+.timing-label {
+  display: block;
+  font-family: 'Righteous', cursive;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 8px;
+}
+
+.timing-value {
+  display: block;
+  font-family: 'Bungee', cursive;
+  font-size: 1.3rem;
+  color: #8a2be2;
+  text-shadow: 0 0 10px #8a2be2;
+}
+
+.tips-section {
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 25px;
+}
+
+.tips-section h3 {
+  font-family: 'Bungee', cursive;
+  color: #ff1493;
+  text-shadow: 0 0 10px #ff1493;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.tips-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tips-list li {
+  font-family: 'Righteous', cursive;
+  color: rgba(255, 255, 255, 0.9);
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tips-list li:last-child {
+  border-bottom: none;
+}
+
+.tips-list li::before {
+  content: '✓ ';
+  color: #00ff00;
+  margin-right: 8px;
+}
+
+.science-note {
+  background: rgba(138, 43, 226, 0.2);
+  border: 2px solid #8a2be2;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 25px;
+}
+
+.science-note h4 {
+  font-family: 'Bungee', cursive;
+  color: #8a2be2;
+  text-shadow: 0 0 10px #8a2be2;
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+}
+
+.science-note p {
+  font-family: 'Righteous', cursive;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+
+.science-detail {
+  font-size: 0.85rem !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+  font-style: italic;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(138, 43, 226, 0.3);
+}
+
+.reset-btn {
+  width: 100%;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  color: #fff;
+  font-family: 'Righteous', cursive;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.reset-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #00ff00;
+  transform: translateY(-2px);
+}
+
+.disclaimer {
+  background: rgba(255, 235, 59, 0.1);
+  border: 1px solid #ffeb3b;
+  border-radius: 12px;
+  padding: 15px;
+  margin-top: 30px;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.disclaimer svg {
+  flex-shrink: 0;
+  color: #ffeb3b;
+  margin-top: 2px;
+}
+
+.disclaimer p {
+  font-family: 'Righteous', cursive;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  line-height: 1.5;
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    text-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00;
+  }
+  50% {
+    text-shadow: 0 0 30px #00ff00, 0 0 60px #00ff00, 0 0 80px #00ff00;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .dose-calculator-page {
+    padding: 80px 15px 30px;
+  }
+
+  .calculator-title {
+    font-size: 2rem;
+  }
+
+  .calculator-form {
+    padding: 20px;
+  }
+
+  .science-info-box {
+    padding: 20px;
+  }
+
+  .science-info-box h3 {
+    font-size: 1.1rem;
+  }
+
+  .science-points li {
+    font-size: 0.85rem;
+  }
+
+  .preview-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .dose-range {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .dose-item.optimal {
+    transform: scale(1);
+  }
+
+  .timing-info {
+    grid-template-columns: 1fr;
+  }
+
+  .result-header h2 {
+    font-size: 1.5rem;
+  }
+}

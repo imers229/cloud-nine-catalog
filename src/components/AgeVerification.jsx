@@ -1,7 +1,10 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import Swal from 'sweetalert2'
+import './AgeVerification.css'
 
 function AgeVerification({ onVerified }) {
+  const [showWelcome, setShowWelcome] = useState(false)
+
   useEffect(() => {
     const checkAge = async () => {
       // Verificar si ya confirmó la edad
@@ -15,40 +18,55 @@ function AgeVerification({ onVerified }) {
       // Pequeño delay para asegurar que todo está cargado
       await new Promise(resolve => setTimeout(resolve, 300))
 
-      // Mostrar alerta
+      // Mostrar alerta con diseño personalizado
       const result = await Swal.fire({
         title: '¿Eres mayor de edad?',
-        text: 'Debes ser mayor de 18 años para acceder a este sitio',
+        html: '<p style="font-size: 1.1rem; color: #fff; font-family: Righteous, cursive;">Debes ser mayor de 18 años para acceder a este sitio</p>',
         icon: 'warning',
+        iconColor: '#ffeb3b',
         showCancelButton: true,
         confirmButtonText: 'Sí, soy mayor de edad',
         cancelButtonText: 'No, soy menor de edad',
-        confirmButtonColor: '#667eea',
-        cancelButtonColor: '#d33',
+        confirmButtonColor: '#ff1493',
+        cancelButtonColor: '#8a2be2',
         allowOutsideClick: false,
         allowEscapeKey: false,
+        background: 'linear-gradient(135deg, rgba(138, 43, 226, 0.95), rgba(255, 20, 147, 0.95))',
+        color: '#fff',
+        customClass: {
+          popup: 'psychedelic-popup',
+          title: 'psychedelic-title',
+          confirmButton: 'psychedelic-confirm-btn',
+          cancelButton: 'psychedelic-cancel-btn'
+        }
       })
 
       if (result.isConfirmed) {
         sessionStorage.setItem('ageVerified', 'true')
-        onVerified(true)
         
-        Swal.fire({
-          title: '¡Bienvenido!',
-          text: 'Disfruta de nuestros productos',
-          icon: 'success',
-          confirmButtonColor: '#667eea',
-          timer: 2000,
-          showConfirmButton: false
-        })
+        // Mostrar animación de bienvenida
+        setShowWelcome(true)
+        
+        // Esperar 1.5 segundos antes de continuar
+        await new Promise(resolve => setTimeout(resolve, 1500))
+        
+        onVerified(true)
       } else if (result.dismiss === Swal.DismissReason.cancel) {
         await Swal.fire({
           title: 'Acceso denegado',
-          text: 'Debes ser mayor de edad para acceder a este sitio',
+          html: '<p style="font-size: 1.1rem; color: #fff; font-family: Righteous, cursive;">Debes ser mayor de edad para acceder</p>',
           icon: 'error',
-          confirmButtonColor: '#d33',
+          iconColor: '#ff1493',
+          confirmButtonColor: '#8a2be2',
           confirmButtonText: 'Entendido',
-          allowOutsideClick: false
+          allowOutsideClick: false,
+          background: 'linear-gradient(135deg, rgba(138, 43, 226, 0.95), rgba(255, 20, 147, 0.95))',
+          color: '#fff',
+          customClass: {
+            popup: 'psychedelic-popup',
+            title: 'psychedelic-title',
+            confirmButton: 'psychedelic-confirm-btn'
+          }
         })
         
         window.location.href = 'https://www.google.com'
@@ -58,13 +76,24 @@ function AgeVerification({ onVerified }) {
     checkAge()
   }, [onVerified])
 
+  if (showWelcome) {
+    return (
+      <div className="welcome-container">
+        <div className="explosion-bg"></div>
+        <div className="welcome-content">
+          <h1 className="welcome-title">🍃</h1>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div style={{
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
       height: '100vh',
-      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
+      background: 'linear-gradient(135deg, #8a2be2 0%, #ff1493 100%)'
     }}>
     </div>
   )

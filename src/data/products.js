@@ -64,7 +64,7 @@ export const products = [
     name: "Hidden Hills Club - Heady Blend Sour Mango",
     category: "gomitas",
     price: 10,
-    image: "/images/products/HiddenHillsSourMango.png",
+    image: '/images/products/HIDDENHILLSCLUBHeadyblendsourmango.png',
     description: "Nuestros nuevos Heady Blend Fresh Frozen Edibles están cuidadosamente elaborados con extractos de cannabis de alta calidad para una experiencia consistente y agradable. Edible de cepa híbrida con perfil de sabor a Mango Agrio. THC-A Ultra, THC-B, D9 Edible Cannabinoid.",
     details: [
       "Contenido: 500mg por pieza, 1000mg total",
@@ -79,7 +79,7 @@ export const products = [
     name: "Hidden Hills Club - Heady Blend Sour Blue Razz",
     category: "gomitas",
     price: 10,
-    image: "/images/products/HiddenHillsSourBlueRazz.png",
+    image: '/images/products/HIDDENHILLSCLUBHeadyblendsourbluerazz.png',
     description: "Nuestros nuevos Heady Blend Fresh Frozen Edibles están cuidadosamente elaborados con extractos de cannabis de alta calidad para una experiencia consistente y agradable. Edible de cepa híbrida con perfil de sabor a Blue Raspberry picante y ácido. THC-A Ultra, THC-B, D9 Edible Cannabinoid.",
     details: [
       "Contenido: 500mg por pieza, 1000mg total",
@@ -94,7 +94,7 @@ export const products = [
     name: "Hidden Hills Club - Heady Blend Peach",
     category: "gomitas",
     price: 10,
-    image: "/images/products/HiddenHillsPeach.png",
+    image: '/images/products/HIDDENHILLSCLUBHeadyblendpeach.png',
     description: "Nuestros nuevos Heady Blend Fresh Frozen Edibles están cuidadosamente elaborados con extractos de cannabis de alta calidad para una experiencia consistente y agradable. Edible de cepa híbrida con perfil de sabor a Durazno dulce y jugoso. THC-A Ultra, THC-B, D9 Edible Cannabinoid.",
     details: [
       "Contenido: 500mg por pieza, 1000mg total",
@@ -109,7 +109,7 @@ export const products = [
     name: "Hidden Hills Club - Heady Blend Strawberry Lime",
     category: "gomitas",
     price: 10,
-    image: "/images/products/HiddenHillsStrawberryLime.png",
+    image: '/images/products/HIDDENHILLSCLUBHeadyblendstraberrylime.png',
     description: "Nuestros nuevos Heady Blend Fresh Frozen Edibles están cuidadosamente elaborados con extractos de cannabis de alta calidad para una experiencia consistente y agradable. Edible de cepa híbrida con perfil de sabor a Fresa y Lima refrescante. THC-A Ultra, THC-B, D9 Edible Cannabinoid.",
     details: [
       "Contenido: 500mg por pieza, 1000mg total",
@@ -124,7 +124,7 @@ export const products = [
     name: "Hidden Hills Club - Heady Blend White Grape",
     category: "gomitas",
     price: 10,
-    image: "/images/products/HiddenHillsWhiteGrape.png",
+    image: '/images/products/HIDDENHILLSCLUBHeadyblendwhitegrape.png',
     description: "Nuestros nuevos Heady Blend Fresh Frozen Edibles están cuidadosamente elaborados con extractos de cannabis de alta calidad para una experiencia consistente y agradable. Edible de cepa híbrida con perfil de sabor a Uva Blanca dulce y elegante. THC-A Ultra, THC-B, D9 Edible Cannabinoid.",
     details: [
       "Contenido: 500mg por pieza, 1000mg total",
@@ -139,7 +139,7 @@ export const products = [
     name: "TreHouse - Delta 9 THC Gummies Peach Pear with CBD",
     category: "gomitas",
     price: 3,
-    image: "/images/products/TreHausePeachPear.png",
+    image: "/images/products/TreHauseCatalogo.png",
     description: "Gomitas Delta 9 THC con CBD de TreHouse sabor Peach Pear. 10mg delta 9 por porción, 10mg full spectrum CBD por porción. Sabor jugoso a durazno y pera. Vegano y sin gluten. Puede ponerte muy relajado. Advertencia: Puede causar efectos psicotrópicos.",
     details: [
       "Contenido: 1 gomita por porción",
@@ -154,7 +154,7 @@ export const products = [
     name: "Zombi - Cookies & Cream White Chocolate Bar 50mg",
     category: "chocolates",
     price: 7,
-    image: "/images/products/ZombiCookiesCream.png",
+    image: '/images/products/ZOMBICHOCOLATE50MGCookies&cream.png',
     description: "Déjate llevar por la clásica combinación que amas con ChocoCrisp Delight Cookies & Cream. Este irresistible chocolate combina la cremosa riqueza del chocolate blanco con el crujiente nostálgico de trozos de galleta, creando una mezcla perfecta de sabor y textura en cada bocado. Infusionado con una mezcla premium de Delta-8, HHC-P y Delta-9 THC, esta delicia ofrece una experiencia perfectamente equilibrada y edificante que es satisfactoria y deliciosa.",
     details: [
       "Contenido: 1 barra por caja",
@@ -169,7 +169,7 @@ export const products = [
     name: "Zombi - Original Milk Chocolate Bar 50mg",
     category: "chocolates",
     price: 7,
-    image: "/images/products/ZombiMilkChocolate.png",
+    image: '/images/products/ZOMBICHOCOLATE50MGMilkchocolate.png',
     description: "Satisface tu diente dulce con ChocoCrisp Delight Original Milk Chocolate, un placer atemporal que combina chocolate con leche cremoso y suave con un crujiente satisfactorio. Infusionado con una mezcla premium de Delta-9 THC, THC-P y HHC, esta delicia clásica ofrece una experiencia perfectamente equilibrada y edificante que es indulgente y relajante. Cada bocado entrega una textura aterciopelada y rica que se derrite en tu boca.",
     details: [
       "Contenido: 1 barra por caja",

@@ -1,0 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Righteous&display=swap');
+
+.information-page {
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 3rem;
+}
+
+.info-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.info-header {
+  text-align: center;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  background: linear-gradient(135deg, rgba(138, 43, 226, 0.7), rgba(255, 20, 147, 0.7));
+  border-radius: 25px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 
+    0 0 40px rgba(138, 43, 226, 0.5),
+    0 10px 40px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+}
+
+.info-title {
+  font-family: 'Bungee', cursive;
+  font-size: 3.5rem;
+  color: #00ff00;
+  margin: 0 0 1rem 0;
+  text-shadow: 
+    0 0 20px #00ff00,
+    0 0 40px #00ff00,
+    3px 3px 0px rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.info-subtitle {
+  font-family: 'Righteous', cursive;
+  font-size: 1.3rem;
+  color: #fff;
+  margin: 0;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.cannabinoid-tabs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.tab-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1.5rem;
+  background: rgba(138, 43, 226, 0.3);
+  border: 2px solid rgba(138, 43, 226, 0.5);
+  border-radius: 15px;
+  color: white;
+  font-family: 'Righteous', cursive;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.tab-btn:hover {
+  background: rgba(138, 43, 226, 0.5);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 20px rgba(138, 43, 226, 0.4);
+}
+
+.tab-btn.active {
+  background: linear-gradient(135deg, #8a2be2, #9370db);
+  border-color: #ff1493;
+  box-shadow: 
+    0 0 20px rgba(255, 20, 147, 0.6),
+    0 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+.cannabinoid-content {
+  background: linear-gradient(135deg, rgba(138, 43, 226, 0.6), rgba(255, 20, 147, 0.6));
+  border-radius: 25px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 
+    0 0 30px rgba(138, 43, 226, 0.4),
+    0 10px 30px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+}
+
+.cannabinoid-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.cannabinoid-header h2 {
+  font-family: 'Bungee', cursive;
+  font-size: 2.5rem;
+  color: #fff;
+  margin: 0 0 1rem 0;
+  text-shadow: 
+    0 0 15px rgba(255, 255, 255, 0.5),
+    2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.cannabinoid-description {
+  font-family: 'Righteous', cursive;
+  font-size: 1.2rem;
+  color: #ffeb3b;
+  margin: 0;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.effects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+}
+
+.effects-card {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
+  padding: 2rem;
+  border: 3px solid;
+}
+
+.effects-card.positive {
+  border-color: rgba(0, 255, 0, 0.5);
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+}
+
+.effects-card.negative {
+  border-color: rgba(255, 152, 0, 0.5);
+  box-shadow: 0 0 20px rgba(255, 152, 0, 0.2);
+}
+
+.effects-card h3 {
+  font-family: 'Righteous', cursive;
+  font-size: 1.8rem;
+  color: #fff;
+  margin: 0 0 1.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.effects-card.positive h3 {
+  color: #00ff00;
+}
+
+.effects-card.negative h3 {
+  color: #ffa500;
+}
+
+.warning-text {
+  background: rgba(255, 152, 0, 0.2);
+  border: 2px solid rgba(255, 152, 0, 0.5);
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  font-family: 'Righteous', cursive;
+  color: #ffeb3b;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.effects-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.effects-card li {
+  font-family: 'Righteous', cursive;
+  font-size: 1.05rem;
+  color: #fff;
+  margin-bottom: 0.8rem;
+  padding-left: 0.5rem;
+  line-height: 1.6;
+}
+
+.advice-section {
+  background: linear-gradient(135deg, rgba(138, 43, 226, 0.6), rgba(255, 20, 147, 0.6));
+  border-radius: 25px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 
+    0 0 30px rgba(138, 43, 226, 0.4),
+    0 10px 30px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+}
+
+.advice-title {
+  font-family: 'Bungee', cursive;
+  font-size: 2.5rem;
+  color: #00ff00;
+  text-align: center;
+  margin: 0 0 2rem 0;
+  text-shadow: 
+    0 0 20px #00ff00,
+    0 0 40px #00ff00,
+    2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.advice-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.advice-card {
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.advice-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 0 20px rgba(255, 20, 147, 0.4),
+    0 10px 30px rgba(0, 0, 0, 0.5);
+  border-color: rgba(255, 20, 147, 0.6);
+}
+
+.advice-card h3 {
+  font-family: 'Righteous', cursive;
+  font-size: 1.3rem;
+  color: #ff1493;
+  margin: 0 0 0.8rem 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.advice-card p {
+  font-family: 'Righteous', cursive;
+  font-size: 1rem;
+  color: #fff;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.disclaimer {
+  background: rgba(255, 152, 0, 0.3);
+  border: 3px solid rgba(255, 152, 0, 0.6);
+  border-radius: 20px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  backdrop-filter: blur(5px);
+}
+
+.disclaimer p {
+  font-family: 'Righteous', cursive;
+  font-size: 1.05rem;
+  color: #fff;
+  margin: 0;
+  line-height: 1.7;
+}
+
+@media (max-width: 968px) {
+  .info-title {
+    font-size: 2.5rem;
+  }
+  
+  .effects-grid,
+  .advice-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .cannabinoid-tabs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .info-title {
+    font-size: 1.8rem;
+    flex-direction: column;
+  }
+  
+  .info-subtitle {
+    font-size: 1rem;
+  }
+  
+  .cannabinoid-header h2 {
+    font-size: 1.8rem;
+  }
+  
+  .advice-title {
+    font-size: 1.8rem;
+  }
+  
+  .cannabinoid-tabs {
+    grid-template-columns: 1fr;
+  }
+}

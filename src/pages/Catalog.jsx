@@ -1,63 +1,82 @@
 import { Link } from 'react-router-dom'
 import { products } from '../data/products'
 import PsychedelicBackground from '../components/PsychedelicBackground'
-import { Cloud, Sparkles, MessageCircle, Rocket, Plane } from 'lucide-react'
-import './Catalog.css'
+import Navbar from '../components/Navbar'
+import { Sparkles, ShoppingBag } from 'lucide-react'
+import './CatalogPsycho.css';
 
-function Catalog() {
+function Catalog({ addToCart }) {
   const whatsappNumber = "593963654889"
-  const whatsappMessage = "¡Hola! 🌥️ Quiero hacer un pedido de Cloud Nine.\n\nProducto que deseo: "
+    const whatsappMessage = "¡Hola! 🍄 Quiero saber más sobre sus productos.\n\nProducto que me interesa: "
 
   const handleWhatsAppClick = () => {
     const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`
     window.open(url, '_blank')
   }
 
+  const handleAddToCart = (e, product) => {
+    e.preventDefault() // Prevent Link navigation
+    addToCart(product)
+    
+    // Visual feedback
+    const target = e.currentTarget
+    target.textContent = '✓ Agregado'
+    target.style.background = 'linear-gradient(135deg, #00ff00, #00cc00)'
+    
+    setTimeout(() => {
+      const icon = target.querySelector('svg')
+      if (icon) {
+        target.textContent = ''
+        target.appendChild(icon)
+        target.appendChild(document.createTextNode(' Agregar a lista'))
+      }
+      target.style.background = ''
+    }, 1500)
+  }
+
   return (
     <div className="catalog">
       <PsychedelicBackground />
+      <Navbar />
       <header className="catalog-header">
-        <h1>
-          <Cloud className="icon-cloud" size={60} strokeWidth={2.5} />
-          Cloud Nine
-          <Sparkles className="icon-sparkles" size={50} strokeWidth={2.5} />
-        </h1>
-        <p className="subtitle">Despega Hacia Tu Momento Perfecto</p>
-        <p className="tagline">Endulza tu viaje, eleva tu experiencia</p>
+        <p className="pre-title">No todas las</p>
+        <h1>GOMITAS</h1>
+        <p className="post-title">son iguales...</p>
+        <div className="magic-text">
+          <p className="magic-line1">Estas tienen su</p>
+          <h2 className="magic-word">MAGIA</h2>
+          <p className="magic-tagline">Si sabes, sabes.</p>
+        </div>
         <button className="whatsapp-btn-header" onClick={handleWhatsAppClick}>
-          <MessageCircle className="icon-btn" size={28} strokeWidth={2.5} /> Inicia Tu Vuelo
+          <Sparkles size={24} /> ESCRÍBENOS
         </button>
       </header>
 
       <section className="products-section">
-        <h2 className="section-title">
-          <Plane className="icon-inline" size={40} strokeWidth={2.5} />
-          Tu Pasaporte al Cielo
-        </h2>
         <div className="products-grid">
           {products.map(product => (
-            <Link to={`/producto/${product.id}`} key={product.id} className="product-card">
-              <div className="product-image">
-                <img src={product.image} alt={product.name} />
-              </div>
-              <div className="product-info">
-                <h3>{product.name}</h3>
+            <div key={product.id} className="product-card-wrapper">
+              <Link to={`/producto/${product.id}`} className="product-card">
+                <img src={product.image} alt={product.name} className="product-image" />
+                <div className="product-category">
+                  {product.category === 'gomitas' ? '🍬 Gomitas Mágicas' : '🍫 Chocolates Especiales'}
+                </div>
+                <h3 className="product-name">{product.name}</h3>
                 <p className="product-price">${product.price} USD</p>
-                <button className="view-details-btn">
-                  Descubre Más <Plane className="icon-btn-small" size={20} strokeWidth={2.5} />
+                <button className="product-btn">
+                  <Sparkles size={20} /> VER DETALLES
                 </button>
-              </div>
-            </Link>
+              </Link>
+              <button 
+                className="add-to-cart-btn"
+                onClick={(e) => handleAddToCart(e, product)}
+              >
+                <ShoppingBag size={20} /> Agregar a lista
+              </button>
+            </div>
           ))}
         </div>
       </section>
-
-      <footer className="catalog-footer">
-        <button className="whatsapp-btn-footer" onClick={handleWhatsAppClick}>
-          <Rocket className="icon-btn" size={28} strokeWidth={2.5} /> Reserva Tu Viaje
-        </button>
-        <p className="footer-text">© 2025 Cloud Nine - Vuela Seguro, Vuela Alto</p>
-      </footer>
     </div>
   )
 }
